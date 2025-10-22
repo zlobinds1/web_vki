@@ -4,6 +4,7 @@ interface StudentInterface {
   lastName: string;
   middleName: string;
   groupId: number;
+  contacts?: string;
   isDeleted?: boolean;
   isCreating?: boolean;
 }

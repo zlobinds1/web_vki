@@ -1,4 +1,4 @@
-import { createStudentDb, getStudentsDb } from "@/db/studentDb";
+import { getStudentsDb, addStudentDb } from "@/db/studentDb";
 import CreateStudentDto from "@/dto/CreateStudentDto";
 
 export async function GET(): Promise<Response> {
@@ -13,7 +13,7 @@ export async function GET(): Promise<Response> {
 
 export async function POST(request: Request): Promise<Response> {
   const dto: CreateStudentDto = await request.json();
-  const student = await createStudentDb(dto);
+  const student = await addStudentDb(dto);
 
   return new Response(JSON.stringify(student), {
     headers: {

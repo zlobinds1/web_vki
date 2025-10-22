@@ -27,7 +27,7 @@ const useStudents = (): StudentsHookInterface => {
    */
   const deleteStudentMutate = useMutation({
     // вызов API delete
-    mutationFn: async (studentId: number) => await deleteStudentApi(studentId),
+    mutationFn: async (studentId: number) => deleteStudentApi(studentId),
     // оптимистичная мутация (обновляем данные на клиенте до API запроса delete)
     onMutate: async (studentId: number) => {
       await queryClient.cancelQueries({ queryKey: ["students"] });
